@@ -1,7 +1,6 @@
 const db=require('../../db');
 const {getInsertData,getUpdateData}=require('../../utils')
 
-
 //Products Controller
 
 exports.createProduct=async(req,res)=>

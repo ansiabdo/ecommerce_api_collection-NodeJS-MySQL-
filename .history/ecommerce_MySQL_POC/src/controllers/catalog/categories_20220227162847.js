@@ -11,11 +11,10 @@ exports.getAllCategories=async(req,res)=>
 
         const response=await db(query)
         res.status(200).json(response)
-    } 
+    }
     catch(error)
     {
-        console.log(error);
-        res.status(500).send("Internal Server Error!");
+        res.status(500).send("Internal Server Error!")
     }
 }
 
@@ -26,6 +25,7 @@ exports.getProductsByCategory=async(req,res)=>
         let attributes=JSON.parse(req.query.attributes);
         attributes=attributes.join(',')
         const category_id=req.params.category_id;
+        
         const query=`SELECT ${attributes} FROM products where category_id = ${category_id}`;
         const response=await db(query)
         res.status(200).json(response)

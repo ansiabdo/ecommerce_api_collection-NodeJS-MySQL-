@@ -11,7 +11,7 @@ exports.getAllCategories=async(req,res)=>
 
         const response=await db(query)
         res.status(200).json(response)
-    } 
+    }
     catch(error)
     {
         console.log(error);

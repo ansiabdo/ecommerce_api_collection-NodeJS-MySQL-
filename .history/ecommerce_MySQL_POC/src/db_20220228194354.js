@@ -8,14 +8,13 @@ const db=async(query,data={})=>
             const connection=mysql.createConnection({
                 host:process.env.DATABASE_HOST,
                 user:process.env.DATABASE_USER,
-                password:process.env.DATABASE_PASSWORD,
                 database:process.env.DATABASE_NAME
             });
             
             connection.query(query,data,(err,res)=>{
                 if(err){
-                    console.log(err);
-                    reject("Query Error!!!");
+                    console.log
+                    reject("Query Error!!!")
                 }
                 connection.end()
                 resolve(res)
@@ -23,8 +22,6 @@ const db=async(query,data={})=>
         }
         catch(error)
         {
-            console.log(error);
-
             reject("Error!!!")
         }   
     })       

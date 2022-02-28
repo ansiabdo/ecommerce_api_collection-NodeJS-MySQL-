@@ -11,11 +11,10 @@ exports.getAllCategories=async(req,res)=>
 
         const response=await db(query)
         res.status(200).json(response)
-    } 
+    }
     catch(error)
     {
-        console.log(error);
-        res.status(500).send("Internal Server Error!");
+        res.status(500).send("Internal Server Error!")
     }
 }
 
